@@ -1,0 +1,52 @@
+login = ""
+passw = ""
+newuse = ["admin"]
+newpass = ["admin"]
+i = 3
+
+def sapaan() : str(print(f"""
+{8*'='} kedai newbie {'='*8}
+        _______________
+        |             |
+        |    login    |
+        |             |
+       TTTTTTTTTTTTTTTTT
+  | 1. buat akun baru       |
+  | 2. cek akun dan masuk   |
+  | 3. keluar               |
+"""))
+    
+# untuk pilihan 1
+while i >= 1 :
+    sapaan()
+    pilog = input("masukkan pilihan (1/2/3)? ")
+
+    if pilog == '1':
+        print(
+        f"""
+    selamat datang di kedai newbie
+     silahkan masukkan "new user"
+        """)
+        newuse.append(input("new user : "))
+        newpass.append(input("new password : "))
+        print("akun masuk\n")
+
+    # untuk pilihan 2
+    elif pilog == '2':
+        print("selamat datang kembali pelanggan")
+        login = input("user : ")
+        passw = input("password : ")
+        if login in newuse and passw in newpass:
+            print("akun anda tersedia")
+            i = False
+        else:
+            i-=1
+            print("maaf anda belum terdaftar, silahkan pergi dari sini!")
+        
+    # untuk pilihan 3
+    elif pilog == '3':
+        print("semoga harimu menyenangkan")
+        break
+    else:
+        i-=1
+        print("program error")
